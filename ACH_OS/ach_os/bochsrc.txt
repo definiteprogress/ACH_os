@@ -1,0 +1,14 @@
+###############################################################
+# bochsrc.txt file for DLX Linux disk image.
+###############################################################
+
+boot: floppy
+floppya: 1_44=../virtual_device_creation_try/Virtual_Floppy_Drive/floppy.img, status=inserted
+romimage: file=..//virtual_device_creation_try/bochs/BIOS-bochs-latest
+vgaromimage: file=../virtual_device_creation_try/bochs/VGABIOS-lgpl-latest
+ 
+# logging and reporting -----------------------------------------------
+ 
+log:         OSDev_bochsrc.log             # All errors and info logs will output to OSDev_bochsrc.log
+error:       action=report 
+info:        action=report
