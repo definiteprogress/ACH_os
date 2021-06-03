@@ -3,9 +3,9 @@
 ###############################################################
 
 boot: floppy
-floppya: 1_44=virtual_device_creation_try/Virtual_Floppy_Drive/floppy.img, status=inserted
-romimage: file=virtual_device_creation_try/bochs/BIOS-bochs-latest
-vgaromimage: file=virtual_device_creation_try/bochs/VGABIOS-lgpl-latest
+floppya: 1_44=../virtual_device_creation_try/Virtual_Floppy_Drive/floppy.img, status=inserted
+romimage: file=../virtual_device_creation_try/bochs/BIOS-bochs-legacy
+vgaromimage: file=../virtual_device_creation_try/bochs/VGABIOS-lgpl-latest
  
 # logging and reporting -----------------------------------------------
  
