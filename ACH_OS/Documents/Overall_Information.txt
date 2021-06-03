@@ -1,0 +1,39 @@
+Intel - 16bit real mode:
+-------------------------
+Interrupts:
+------------
+
+0x19 - will load and execute the bootloader (i.e finds the Boot Sector)
+0x10 - prints character on screen
+0x12 - gets the memory details from BIOS
+0x13 - Function 0 -resets Floppy disk by calling BIOS
+       Function 0x02 - read sectors into memory
+
+
+In summary, there are 512 bytes per sector, 18 sectors per track, and 80 tracks per side.
+
+Additional information:
+
+    1. Each Track is useually divided into 512 byte sectors. On floppies, there are 18 sectors per track.
+    2. A Cylinder is a group of tracks with the same radius (The Red tracks in the picture above are one cylinder)
+    3. Floppy Disks have two heads (Displayed in the picture)
+    4. There is 2880 Sectors total.
+
+
+
+System Algorithm:
+------------------
+1. Laptop power switch ON, that triggers signal to the motherboard.
+2. Motherboard gives control to powersupply, which inturn calls the routine "POST" to 
+   check if all i/o devices gets sufficient power.POST long jumps to 0xFFFF00 where
+   BIOS is located.
+3. BIOS checks input/ouputs devices,sets up Interrupt Vector Table(IVT) and executes
+   interrupt 0x19, which is a interrupt to find boot sector ( or in plain text finds the
+   bootable device or disk with the help of the magic Boot signature 0xAA55 in byte 511 and 512)
+4. if in byte 511 - 0xAA, 512 - 0x55, INT 0x19 will load and execute the bootloader.
+5. The BIOS in this case(x86 processor) finds the stage 1 bootloader at address 0x7C00.
+6. OEM parameter block which describes about FAT12 file system is mentioned in asm file.
+7. Resets floppy disc using 0x13 BIOS interrupt, function 0. Accumulator is set with sector address
+   0x1000:0000. Interrupt to read the floppy sector is enabled using 0x13 BIOS interrupt, function 2
+8. Control is passed from sector 1 to sector 2 using jump 0x1000:0x0
+9. cli , hlt for the time being in sector 2(stage 2 bootloader).

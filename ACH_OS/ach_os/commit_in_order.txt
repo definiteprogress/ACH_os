@@ -9,3 +9,4 @@ Commit index|Date|Message:
 4. 03-JUN-2021 "Commit order file"
 5. 03-JUN-2021 "Welcome to ACH Operating System! - no bugs - working code"
 6. 03-JUN-2021 "FAT12 File system - reading and loading sectors - not working, mentioned in website"
+7. 03-JUN-2021 "Updated Overall_Information.txt file with System Algorithm"
