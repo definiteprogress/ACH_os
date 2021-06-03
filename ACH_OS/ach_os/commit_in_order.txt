@@ -8,3 +8,4 @@ Commit index|Date|Message:
 3. 03-JUN-2021 "Bootloader amended - Day 2"
 4. 03-JUN-2021 "Commit order file"
 5. 03-JUN-2021 "Welcome to ACH Operating System! - no bugs - working code"
+6. 03-JUN-2021 "FAT12 File system - reading and loading sectors - not working, mentioned in website"

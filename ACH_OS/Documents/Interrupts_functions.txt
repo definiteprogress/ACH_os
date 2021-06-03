@@ -1,0 +1,18 @@
+Intel - 16bit real mode:
+-------------------------
+
+0x19 - will load and execute the bootloader
+0x10 - prints character on screen
+0x12 - gets the memory details from BIOS
+0x13 - Function 0 -resets Floppy disk by calling BIOS
+       Function 0x02 - read sectors into memory
+
+
+In summary, there are 512 bytes per sector, 18 sectors per track, and 80 tracks per side.
+
+Additional information:
+
+    1. Each Track is useually divided into 512 byte sectors. On floppies, there are 18 sectors per track.
+    2. A Cylinder is a group of tracks with the same radius (The Red tracks in the picture above are one cylinder)
+    3. Floppy Disks have two heads (Displayed in the picture)
+    4. There is 2880 Sectors total.
