@@ -77,7 +77,7 @@ bsSerialNumber:	        DD 0xa0a1a2a3
 bsVolumeLabel: 	        DB "MOS FLOPPY "
 bsFileSystem: 	        DB "FAT12   "
 
-msg	db	"Welcome to My Operating System!", 0		; the string to print
+msg	db	"Welcome to ACH Operating System!", 0		; the string to print
 
 ;***************************************
 ;	Prints a string
